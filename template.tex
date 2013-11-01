@@ -1,0 +1,142 @@
+% Created 2013-10-31 Thu 21:10
+\documentclass[bigger]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{soul}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\tolerance=1000
+\setbeamertemplate{navigation symbols}{}
+\institute{institute goes here}
+\date{today}
+\providecommand{\alert}[1]{\textbf{#1}}
+
+\title{Writing Beamer presentations in org-mode}
+\author{Sefa Kilic}
+\date{\today}
+\hypersetup{
+  pdfkeywords={},
+  pdfsubject={},
+  pdfcreator={Emacs Org-mode version 7.8.02}}
+
+\begin{document}
+
+\maketitle
+
+
+
+\section{Introduction}
+\label{sec-1}
+\begin{frame}
+\frametitle{A simple slide}
+\label{sec-1-1}
+
+This slide consists of some text with a number of bullet points:
+
+\begin{itemize}
+\item the first, very \underline{important}, point!
+\item the previous point shows the use of the special markup which
+  translates to the Beamer specific \emph{alert} command for highlighting
+  text.
+\end{itemize}
+
+
+The above list could be numbered or any other type of list and may
+include sub-lists.
+\end{frame}
+\section{A more complex slide}
+\label{sec-2}
+\begin{frame}
+\frametitle{A more complex slide}
+\label{sec-2-1}
+
+This slide illustrates the use of Beamer blocks.  The following text,
+with its own headline, is displayed in a block:
+\begin{itemize}
+
+\item Org mode increases productivity
+\label{sec-2-1-1}%
+\begin{itemize}
+\item org mode means not having to remember \LaTeX{} commands.
+\item it is based on ascii text which is inherently portable.
+\item Emacs!
+\end{itemize}
+
+    \hfill \(\qed\)
+
+\end{itemize} % ends low level
+\end{frame}
+\begin{frame}
+\frametitle{Two columns}
+\label{sec-2-2}
+\begin{columns}
+\begin{column}{0.4\textwidth}
+%% A block
+\label{sec-2-2-1}
+
+\begin{itemize}
+\item this slide consists of two columns
+\item the first (left) column has no heading and consists of text
+\item the second (right) column has an image and is enclosed in an
+      @example@ block
+\end{itemize}
+\end{column}
+\begin{column}{0.6\textwidth}
+\begin{example}[A screenshot]
+\label{sec-2-2-2}
+
+    \includegraphics[width=\textwidth]{/../images/org-beamer/a-simple-slide.png}
+\end{example}
+\end{column}
+\end{columns}
+\end{frame}
+\section{Using Babel}
+\label{sec-3}
+\begin{frame}[fragile]
+\frametitle{Babel}
+\label{sec-3-1}
+\begin{columns}
+\begin{column}{0.45\textwidth}
+\begin{block}{Octave code}
+\label{sec-3-1-1}
+
+
+\begin{verbatim}
+A = [1 2 ; 3 4]
+b = [1; 1];
+x = A\b
+\end{verbatim}
+\end{block}
+\end{column}
+\begin{column}{0.4\textwidth}
+\begin{block}{The output}
+\label{sec-3-1-2}
+
+
+
+\begin{verbatim}
+A =
+
+   1   2
+   3   4
+
+x =
+
+  -1
+   1
+\end{verbatim}
+\end{block}
+\end{column}
+\end{columns}
+\end{frame}
+
+\end{document}
